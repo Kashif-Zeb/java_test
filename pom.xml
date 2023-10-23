@@ -13,6 +13,39 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+			
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <version>3.10.1</version>
+			    <configuration>
+                <source>1.8</source> <!-- Set your desired source Java version -->
+                <target>1.8</target> <!-- Set your desired target Java version -->
+                <!-- Other configuration options can go here -->
+            </configuration>
+            </plugin>
+             	<plugin>
+				            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+				
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-surefire-plugin</artifactId>
+				    <version>3.1.0</version>
+					<configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>${filename}</suiteXmlFile>
+                </suiteXmlFiles>
+                <!-- Other configuration options for the Surefire Plugin can go here -->
+            </configuration>
+
+			
+
+        </plugin>
+    </plugins>
+</build>
 
   <dependencies>
     <dependency>
@@ -41,6 +74,14 @@
     <artifactId>extentreports</artifactId>
     <version>3.1.5</version>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>32.1.2-jre</version>
+</dependency>
+
 
 
   </dependencies>

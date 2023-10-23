@@ -1,5 +1,7 @@
 package selenium.selenium;
+import org.testng.annotations.Test;
 import java.time.Duration;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,25 +10,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class khan {
-
-	public static void main(String[] args) {
+	static WebDriver driver;
+	@Test
+	public void f(){
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
 		
 		ExtentReports extent= new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		ExtentTest test= extent.createTest("my first test","sample description");
 		
-		
-        String chromeDriverPath = "C:\\Program Files (x86)\\chromedriver_win32\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\chromedriver_win32\\chromedriver.exe");
+//        String chromeDriverPath = "C:\\Program Files (x86)\\chromedriver_win32\\chromedriver.exe";
+//        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 
         driver.get("https://demo.automationtesting.in/Frames.html");
