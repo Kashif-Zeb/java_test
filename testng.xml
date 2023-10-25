@@ -4,6 +4,9 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="selenium.selenium.khan"/>
+      <class name="selenium.selenium.iframe"/>
+      <class name="selenium.selenium.JavaScriptAlertExample"/>
+      <class name="selenium.selenium.JavaScriptPromptExample"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
